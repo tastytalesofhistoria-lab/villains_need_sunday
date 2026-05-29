@@ -228,7 +228,35 @@
 
 /* ===================== Avatar dernier message ===================== */
 
+/* ===================== Avatar dernier message ===================== */
+
 .mib-avatar{
+	position:relative;
+	display:block;
+	padding:8px;
+	overflow:hidden;
+}
+
+.mib-avatar .lastpost-avatar{
+	display:block!important;
+	width:100%!important;
+	height:100%!important;
+	margin:0!important;
+	padding:0!important;
+	border-radius:0!important;
+	overflow:hidden!important;
+}
+
+.mib-avatar .lastpost-avatar img{
+	display:block!important;
+	width:100%!important;
+	height:100%!important;
+	min-width:100%!important;
+	min-height:100%!important;
+	object-fit:cover!important;
+	object-position:center!important;
+	border-radius:0!important;
+}
 
 
 
