@@ -423,12 +423,11 @@
 		max-height:none;
 	}
 
-	.mib-avatar .lastpost-avatar,
-	.mib-avatar .lastpost-avatar img{
-		width:64px;
-		height:64px;
-	}
-
+.mib-avatar .lastpost-avatar,
+.mib-avatar .lastpost-avatar img{
+	width:100%!important;
+	height:100%!important;
+}
 	.forabg-04 .mib-forums{
 		display:flex!important;
 		flex-direction:column;
