@@ -1,7 +1,7 @@
 /* =========================================================
-VILLAINS NEED SUNDAYS TOO — INDEX_BOX MODERNBB
-Structure réelle : 4 catégories Forumactif
-1 2 3 / 4 contient les deux zones RP
+VNST — INDEX_BOX MODERNBB
+Structure : 4 catégories natives
+1 2 3 / 4 contient les 2 panneaux RP
 ========================================================= */
 
 :root{
@@ -29,7 +29,7 @@ margin:18px auto;
 display:grid;
 grid-template-columns:repeat(12,1fr);
 gap:14px;
-color:var(--vnst-text);
+color:var(--vnst-text)!important;
 font-family:Arial,Helvetica,sans-serif;
 }
 
@@ -40,7 +40,7 @@ margin-left:auto!important;
 margin-right:auto!important;
 }
 
-/* Reset ModernBB dans l’index */
+/* reset ModernBB */
 
 #vnst-index .forabg,
 #vnst-index .topiclist,
@@ -58,6 +58,7 @@ border:0!important;
 #vnst-index dfn{display:none!important}
 
 #vnst-index .hierarchy,
+#vnst-index h1,
 #vnst-index h2,
 #vnst-index h3{
 margin:0!important;
@@ -66,21 +67,28 @@ border:0!important;
 background:none!important;
 }
 
-/* Placement des 4 catégories */
+/* catégories natives */
 
 .vnst-forabg{
 --accent:var(--vnst-pink);
 border:1px solid var(--accent)!important;
 border-radius:16px;
-background:linear-gradient(135deg,rgba(16,19,38,.96),rgba(10,11,24,.96))!important;
+background:linear-gradient(135deg,rgba(16,19,38,.98),rgba(10,11,24,.98))!important;
 overflow:hidden;
-box-shadow:0 0 22px color-mix(in srgb,var(--accent) 18%,transparent);
+box-shadow:0 0 22px color-mix(in srgb,var(--accent) 20%,transparent);
 }
 
 .vnst-cat-1{grid-column:span 4;--accent:var(--vnst-orange)}
 .vnst-cat-2{grid-column:span 4;--accent:var(--vnst-cyan)}
 .vnst-cat-3{grid-column:span 4;--accent:var(--vnst-purple)}
-.vnst-cat-4{grid-column:1/-1;--accent:var(--vnst-pink);border:0!important;background:none!important;box-shadow:none!important;overflow:visible}
+.vnst-cat-4{
+grid-column:1/-1;
+border:0!important;
+background:none!important;
+box-shadow:none!important;
+overflow:visible;
+--accent:var(--vnst-pink);
+}
 
 .vnst-cat-head,
 .vnst-cat-head .header,
@@ -102,7 +110,7 @@ gap:9px;
 padding:12px 16px;
 border-bottom:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
 background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 20%,transparent),transparent);
-color:var(--accent);
+color:var(--accent)!important;
 font-size:16px;
 font-weight:900;
 text-transform:uppercase;
@@ -120,16 +128,15 @@ color:var(--accent);
 .vnst-cat-1 .vnst-cat-num:before{content:"✿";margin-right:6px}
 .vnst-cat-2 .vnst-cat-num:before{content:"◆";margin-right:6px}
 .vnst-cat-3 .vnst-cat-num:before{content:"☂";margin-right:6px}
-.vnst-cat-4 .vnst-cat-num:before{content:"";margin-right:0}
 
-/* Les 3 catégories du haut */
+/* catégories 1 / 2 / 3 */
 
 .vnst-cat-1 .vnst-forums,
 .vnst-cat-2 .vnst-forums,
 .vnst-cat-3 .vnst-forums{
 display:grid!important;
 grid-template-columns:1fr 1fr;
-gap:10px 14px;
+gap:12px 16px;
 padding:14px 16px 16px;
 }
 
@@ -137,10 +144,9 @@ padding:14px 16px 16px;
 .vnst-cat-2 .vnst-dl,
 .vnst-cat-3 .vnst-dl{
 display:grid!important;
-grid-template-columns:42px 1fr;
+grid-template-columns:46px 1fr;
 gap:10px;
 align-items:start;
-min-height:auto;
 }
 
 .vnst-cat-1 .vnst-dl:before,
@@ -152,7 +158,7 @@ height:42px;
 border-radius:50%;
 background:rgba(255,255,255,.04);
 border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
-box-shadow:0 0 12px color-mix(in srgb,var(--accent) 13%,transparent);
+box-shadow:0 0 12px color-mix(in srgb,var(--accent) 15%,transparent);
 grid-column:1;
 grid-row:1 / span 3;
 }
@@ -161,6 +167,7 @@ grid-row:1 / span 3;
 .vnst-cat-2 .vnst-dterm,
 .vnst-cat-3 .vnst-dterm{
 grid-column:2;
+min-width:0;
 }
 
 .vnst-cat-1 .vnst-topics,
@@ -175,8 +182,6 @@ grid-column:2;
 display:none!important;
 }
 
-/* Titre / description / sous-forums haut */
-
 .vnst-forum-title{
 display:block;
 color:#fff!important;
@@ -188,7 +193,7 @@ text-decoration:none!important;
 
 .vnst-desc{
 margin-top:3px;
-color:var(--vnst-muted);
+color:var(--vnst-muted)!important;
 font-size:12px;
 line-height:1.35;
 }
@@ -210,7 +215,7 @@ line-height:1.25;
 
 .vnst-sub-line{
 display:block;
-color:var(--accent);
+color:var(--accent)!important;
 }
 
 .vnst-sub-line:before{
@@ -223,7 +228,7 @@ color:var(--accent)!important;
 text-decoration:none!important;
 }
 
-/* Catégorie 4 : Kirinomiya devient seulement conteneur */
+/* catégorie 4 : conteneur Kirinomiya */
 
 .vnst-cat-4>.vnst-cat-head{
 display:none!important;
@@ -236,36 +241,41 @@ gap:14px;
 padding:0!important;
 }
 
-/* Les deux forums de Kirinomiya deviennent les panneaux RP */
+/* panneaux RP générés */
 
-.vnst-cat-4>.vnst-forums>.vnst-row{
+.vnst-rp-panel-row{
 display:block!important;
+}
+
+.vnst-rp-panel{
+--rp-accent:var(--vnst-blue);
 border:1px solid var(--rp-accent)!important;
 border-radius:16px;
+background:linear-gradient(135deg,rgba(16,19,38,.98),rgba(10,11,24,.98))!important;
 overflow:hidden;
-background:linear-gradient(135deg,rgba(16,19,38,.96),rgba(10,11,24,.96))!important;
-box-shadow:0 0 22px color-mix(in srgb,var(--rp-accent) 18%,transparent);
+box-shadow:0 0 22px color-mix(in srgb,var(--rp-accent) 20%,transparent);
+height:100%;
 }
 
-.vnst-cat-4>.vnst-forums>.vnst-row:nth-child(1){--rp-accent:var(--vnst-blue)}
-.vnst-cat-4>.vnst-forums>.vnst-row:nth-child(2){--rp-accent:var(--vnst-pink)}
-
-.vnst-cat-4>.vnst-forums>.vnst-row>.vnst-dl{
-display:block!important;
-min-height:auto;
+.vnst-rp-panel-2 .vnst-rp-panel{
+--rp-accent:var(--vnst-pink);
 }
 
-/* header RP depuis le forum parent */
+/* parent RP = header */
 
-.vnst-cat-4 .vnst-dterm{
+.vnst-rp-panel>.vnst-row>.vnst-dl{
 display:block!important;
 }
 
-.vnst-cat-4 .vnst-main{
+.vnst-rp-panel>.vnst-row .vnst-dterm{
+display:block!important;
+}
+
+.vnst-rp-panel>.vnst-row .vnst-main{
 margin:0!important;
 }
 
-.vnst-cat-4 .vnst-title-wrap{
+.vnst-rp-panel>.vnst-row .vnst-title-wrap{
 display:block!important;
 min-height:145px;
 padding:28px 18px 18px!important;
@@ -276,7 +286,7 @@ radial-gradient(circle at 50% 25%,color-mix(in srgb,var(--rp-accent) 32%,transpa
 linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.25));
 }
 
-.vnst-cat-4 .vnst-row:nth-child(1) .vnst-title-wrap:before{
+.vnst-rp-panel-1 .vnst-title-wrap:before{
 content:"☾ 4";
 display:block;
 color:var(--rp-accent);
@@ -284,7 +294,7 @@ font-size:26px;
 margin-bottom:10px;
 }
 
-.vnst-cat-4 .vnst-row:nth-child(2) .vnst-title-wrap:before{
+.vnst-rp-panel-2 .vnst-title-wrap:before{
 content:"☼ 5";
 display:block;
 color:var(--rp-accent);
@@ -292,7 +302,7 @@ font-size:26px;
 margin-bottom:10px;
 }
 
-.vnst-cat-4 .vnst-forum-title{
+.vnst-rp-panel>.vnst-row .vnst-forum-title{
 color:#fff!important;
 font-size:25px;
 font-weight:500;
@@ -301,45 +311,55 @@ letter-spacing:4px;
 text-transform:uppercase;
 }
 
-.vnst-cat-4 .vnst-desc{
+.vnst-rp-panel>.vnst-row .vnst-desc{
 max-width:520px;
 margin:10px auto 0;
 padding:0 18px 18px;
 text-align:center;
-color:#efe1f0;
+color:#efe1f0!important;
 font-size:12px;
 line-height:1.55;
 }
 
-/* Sous-forums RP = lieux en grille */
+.vnst-rp-panel>.vnst-row .vnst-subforums,
+.vnst-rp-panel>.vnst-row .vnst-topics,
+.vnst-rp-panel>.vnst-row .vnst-posts,
+.vnst-rp-panel>.vnst-row .vnst-lastpost,
+.vnst-rp-panel>.vnst-row .vnst-modos{
+display:none!important;
+}
 
-.vnst-cat-4 .vnst-subforums{
-display:grid!important;
+/* lieux RP */
+
+.vnst-rp-places{
+display:grid;
 grid-template-columns:1fr 1fr;
 gap:0;
 padding:18px;
-margin:0;
 }
 
-.vnst-cat-4 .vnst-sub-line{
-display:grid;
+.vnst-rp-places>.vnst-row{
+display:block!important;
+}
+
+.vnst-rp-places>.vnst-row:nth-child(odd){
+border-right:1px solid rgba(255,255,255,.065)!important;
+}
+
+.vnst-rp-places>.vnst-row:nth-last-child(-n+2) .vnst-dl{
+border-bottom:0!important;
+}
+
+.vnst-rp-places .vnst-dl{
+display:grid!important;
 grid-template-columns:58px 1fr;
 gap:13px;
-min-height:86px;
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,.065);
-color:inherit;
+min-height:96px;
+padding:12px!important;
+border-bottom:1px solid rgba(255,255,255,.065)!important;
 }
 
-.vnst-cat-4 .vnst-sub-line:nth-child(odd){
-border-right:1px solid rgba(255,255,255,.065);
-}
-
-.vnst-cat-4 .vnst-sub-line:nth-last-child(-n+2){
-border-bottom:0;
-}
-
-.vnst-cat-4 .vnst-sub-line:before{
+.vnst-rp-places .vnst-dl:before{
 content:"";
 width:58px;
 height:58px;
@@ -347,24 +367,77 @@ border-radius:50%;
 display:block;
 background:rgba(255,255,255,.035);
 border:1px solid color-mix(in srgb,var(--rp-accent) 42%,transparent);
-box-shadow:0 0 18px color-mix(in srgb,var(--rp-accent) 13%,transparent);
+box-shadow:0 0 18px color-mix(in srgb,var(--rp-accent) 15%,transparent);
+grid-column:1;
+grid-row:1 / span 3;
 }
 
-.vnst-cat-4 .vnst-sub-line a{
-align-self:center;
-color:#fff!important;
+.vnst-rp-places .vnst-dterm{
+grid-column:2;
+min-width:0;
+}
+
+.vnst-rp-places .vnst-forum-title{
 font-size:15px;
 font-weight:900;
 text-transform:uppercase;
 letter-spacing:1px;
 }
 
-/* on masque les stats du forum parent RP */
+.vnst-rp-places .vnst-desc{
+font-size:12px;
+line-height:1.35;
+}
 
-.vnst-cat-4 .vnst-topics,
-.vnst-cat-4 .vnst-posts,
-.vnst-cat-4 .vnst-lastpost,
-.vnst-cat-4 .vnst-modos{
+.vnst-rp-places .vnst-subforums,
+.vnst-rp-places .vnst-modos,
+.vnst-rp-places .vnst-topics,
+.vnst-rp-places .vnst-posts{
+display:none!important;
+}
+
+.vnst-rp-places .vnst-lastpost{
+display:flex!important;
+align-items:center;
+gap:7px;
+grid-column:2;
+margin-top:7px!important;
+color:var(--rp-accent)!important;
+font-size:11px;
+font-weight:700;
+}
+
+.vnst-rp-places .vnst-lastpost:before{
+content:"Dernier posteur : ";
+}
+
+.vnst-last-avatar{
+width:18px;
+height:18px;
+border-radius:4px;
+flex:0 0 18px;
+overflow:hidden;
+display:block;
+background:linear-gradient(135deg,#ffd6eb,var(--rp-accent,var(--accent)));
+border:1px solid rgba(255,255,255,.35);
+}
+
+.vnst-last-avatar img{
+width:100%!important;
+height:100%!important;
+object-fit:cover;
+display:block;
+border-radius:0!important;
+}
+
+.vnst-last-infos{
+display:block;
+font-size:11px;
+line-height:1.35;
+color:var(--rp-accent,var(--accent))!important;
+}
+
+.vnst-rp-places .vnst-last-infos a{
 display:none!important;
 }
 
@@ -391,24 +464,23 @@ grid-template-columns:1fr;
 .vnst-cat-1 .vnst-forums,
 .vnst-cat-2 .vnst-forums,
 .vnst-cat-3 .vnst-forums,
-.vnst-cat-4 .vnst-subforums{
+.vnst-rp-places{
 grid-template-columns:1fr;
 }
 
-.vnst-cat-4 .vnst-sub-line,
-.vnst-cat-4 .vnst-sub-line:nth-child(odd){
-border-right:0;
+.vnst-rp-places>.vnst-row:nth-child(odd){
+border-right:0!important;
 }
 
-.vnst-cat-4 .vnst-sub-line:nth-last-child(-n+2){
-border-bottom:1px solid rgba(255,255,255,.065);
+.vnst-rp-places>.vnst-row:nth-last-child(-n+2) .vnst-dl{
+border-bottom:1px solid rgba(255,255,255,.065)!important;
 }
 
-.vnst-cat-4 .vnst-sub-line:last-child{
-border-bottom:0;
+.vnst-rp-places>.vnst-row:last-child .vnst-dl{
+border-bottom:0!important;
 }
 
-.vnst-cat-4 .vnst-forum-title{
+.vnst-rp-panel>.vnst-row .vnst-forum-title{
 font-size:20px;
 letter-spacing:2px;
 }
