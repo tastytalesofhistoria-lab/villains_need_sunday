@@ -283,11 +283,15 @@ height:64px;
 grid-template-columns:minmax(260px,1fr)110px 210px;
 }
 
-.mib-forum-body.mib-no-subs .mib-subs{
+ .mib-subforums-list:empty::before{
+content:none!important;
 display:none!important;
 }
 
-.mib-subforums-list:empty::before{
-content:none!important;
+.mib-subs-empty .mib-subforums-list{
 display:none!important;
+}
+
+.mib-subs-empty{
+padding:8px;
 }
