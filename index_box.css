@@ -229,29 +229,7 @@
 /* ===================== Avatar dernier message ===================== */
 
 .mib-avatar{
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	padding:8px;
-	overflow:hidden;
-}
 
-.mib-avatar .lastpost-avatar{
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	width:72px;
-	height:72px;
-	border-radius:0;
-	overflow:hidden;
-}
-
-.mib-avatar .lastpost-avatar img{
-	width:72px;
-	height:72px;
-	object-fit:cover;
-	display:block;
-}
 
 
 /* ===================== Dernier message + stats ===================== */
