@@ -1,438 +1,75 @@
-/* =========================================================
-VILLAINS NEED SUNDAYS TOO — INDEX_BOX MODERNBB
-Fichier GitHub : index_box.css
-Préfixe : vnst-
-========================================================= */
-
 :root{
 --vnst-bg:#060814;
 --vnst-panel:#0d1020;
---vnst-panel2:#14182d;
 --vnst-text:#f8efff;
 --vnst-muted:#b9aecb;
---vnst-soft:#c7bdd7;
---vnst-pink:#ff75b8;
---vnst-pink2:#ff9fcc;
---vnst-cyan:#35ddff;
 --vnst-orange:#ff8f5d;
+--vnst-cyan:#35ddff;
 --vnst-purple:#9c5cff;
 --vnst-blue:#8bb8ff;
---vnst-line:rgba(255,255,255,.075);
+--vnst-pink:#ff9fcc;
 }
 
-#vnst-index,
-#vnst-index *,
-#vnst-index *:before,
-#vnst-index *:after{box-sizing:border-box}
+#vnst-index,#vnst-index *{box-sizing:border-box}
+#vnst-index{max-width:1180px;margin:18px auto;color:var(--vnst-text);font-family:Arial,Helvetica,sans-serif}
+#vnst-index .vnst-raw{display:none!important}
 
-#vnst-index{
-max-width:1180px;
-margin:18px auto;
-color:var(--vnst-text);
-font-family:Arial,Helvetica,sans-serif;
-}
+.vnst-linklist-top,.vnst-linklist-bottom{max-width:1180px;margin-left:auto!important;margin-right:auto!important}
 
-.vnst-linklist-top,
-.vnst-linklist-bottom{
-max-width:1180px;
-margin-left:auto!important;
-margin-right:auto!important;
-}
-
-/* RESET STRUCTURE FORUMACTIF */
-
-#vnst-index .forabg,
-#vnst-index .topiclist,
-#vnst-index .row,
-#vnst-index dl,
-#vnst-index dd{
-margin:0!important;
-padding:0!important;
-background:none!important;
-border:0!important;
-float:none!important;
-width:auto!important;
-}
-
-#vnst-index .vnst-fa-cat,
-#vnst-index .vnst-fa-list{
-display:contents!important;
-}
-
-#vnst-index{
-display:grid;
-grid-template-columns:repeat(12,1fr);
-gap:14px;
-}
-
-.vnst-hide,
-.vnst-hide-subrow{
-display:none!important;
-}
-
-.vnst-card{
---accent:var(--vnst-pink);
-border:1px solid var(--accent)!important;
-border-radius:16px;
-background:linear-gradient(135deg,rgba(16,19,38,.96),rgba(10,11,24,.96))!important;
-overflow:hidden;
-box-shadow:0 0 22px color-mix(in srgb,var(--accent) 18%,transparent);
-}
-
+.vnst-built{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.vnst-card{border:1px solid var(--accent);border-radius:16px;background:linear-gradient(135deg,rgba(16,19,38,.96),rgba(10,11,24,.96));overflow:hidden;box-shadow:0 0 22px color-mix(in srgb,var(--accent) 18%,transparent)}
 .vnst-canal{--accent:var(--vnst-orange)}
 .vnst-registre{--accent:var(--vnst-cyan)}
 .vnst-horschamp{--accent:var(--vnst-purple)}
 .vnst-sixjours{--accent:var(--vnst-blue)}
-.vnst-dimanche{--accent:var(--vnst-pink2)}
+.vnst-dimanche{--accent:var(--vnst-pink)}
 
-/* 1 / 2 / 3 */
+.vnst-mini{grid-column:span 4}
+.vnst-mini-head{min-height:46px;display:flex;align-items:center;gap:9px;padding:12px 16px;border-bottom:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 20%,transparent),transparent)}
+.vnst-mini-head i{font-style:normal;color:var(--accent);font-size:18px}
+.vnst-mini-head h2{margin:0!important;padding:0!important;border:0!important;background:none!important;color:var(--accent);font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+.vnst-mini-head b{font-weight:900}
+.vnst-mini-body{padding:14px 16px 16px}
+.vnst-mini-desc{color:var(--vnst-muted);font-size:12px;line-height:1.55}
+.vnst-mini-desc a{color:var(--accent)!important;text-decoration:none!important}
+.vnst-mini-subs{display:grid;gap:5px;margin-top:12px}
+.vnst-mini-sub{display:block;color:var(--accent)!important;font-size:12px;line-height:1.3;text-decoration:none!important}
+.vnst-mini-sub:before{content:"↳ ";font-weight:900}
+.vnst-mini-sub--child{padding-left:14px;opacity:.85}
 
-.vnst-mini-card{
-grid-column:span 4;
-display:block!important;
-}
+.vnst-rp{grid-column:span 6}
+.vnst-rp-cover{min-height:145px;padding:28px 18px 18px;text-align:center;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);background:radial-gradient(circle at 50% 25%,color-mix(in srgb,var(--accent) 32%,transparent),transparent 35%),linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.25));position:relative}
+.vnst-rp-cover:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.42));pointer-events:none}
+.vnst-rp-cover>*{position:relative;z-index:1}
+.vnst-rp-cover i{display:block;font-style:normal;color:var(--accent);font-size:26px;margin-bottom:10px}
+.vnst-rp-cover h2{margin:0!important;padding:0!important;border:0!important;background:none!important;color:#fff;font-size:25px;font-weight:500;line-height:1.2;letter-spacing:4px;text-transform:uppercase}
+.vnst-rp-cover h2 b{color:var(--accent);font-weight:900}
+.vnst-rp-cover p{max-width:520px;margin:10px auto 0;color:#efe1f0;font-size:12px;line-height:1.55}
 
-.vnst-mini-card>.vnst-forum{
-display:block;
-min-height:100%;
-}
-
-.vnst-card-head{
-min-height:46px;
-display:flex;
-align-items:center;
-gap:8px;
-padding:12px 16px;
-border-bottom:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
-background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 20%,transparent),transparent);
-color:var(--accent);
-font-size:16px;
-font-weight:900;
-}
-
-.vnst-card-head i{
-font-style:normal;
-font-size:18px;
-}
-
-.vnst-mini-card .vnst-forum-icon,
-.vnst-mini-card .vnst-forum-stats,
-.vnst-mini-card .vnst-forum-last{
-display:none!important;
-}
-
-.vnst-mini-card .vnst-forum-main{
-padding:14px 16px 16px;
-}
-
-.vnst-mini-card .vnst-forum-title-wrap{
-margin:0!important;
-padding:0!important;
-border:0!important;
-background:none!important;
-}
-
-.vnst-mini-card .vnst-forum-title{
-display:block;
-color:var(--accent)!important;
-font-size:22px;
-font-weight:900;
-line-height:1.25;
-text-transform:uppercase;
-letter-spacing:1px;
-text-decoration:none!important;
-margin-bottom:10px;
-}
-
-.vnst-mini-card .vnst-forum-desc{
-color:var(--vnst-muted);
-font-size:12px;
-line-height:1.55;
-}
-
-.vnst-mini-card .vnst-forum-desc a{
-color:var(--accent)!important;
-text-decoration:none!important;
-}
-
-.vnst-mini-card .vnst-forum-subforums{
-display:grid;
-gap:5px;
-margin-top:12px;
-font-size:12px;
-line-height:1.3;
-}
-
-.vnst-mini-card .vnst-forum-subforums strong{
-display:none!important;
-}
-
-.vnst-mini-card .vnst-sub-line{
-display:block;
-color:var(--accent);
-}
-
-.vnst-mini-card .vnst-sub-line:before{
-content:"↳ ";
-font-weight:900;
-}
-
-.vnst-mini-card .vnst-sub-line a{
-color:var(--accent)!important;
-text-decoration:none!important;
-}
-
-/* RP PANELS */
-
-.vnst-rp-built-row{
-grid-column:span 6;
-display:block!important;
-}
-
-.vnst-rp-card{
-display:block!important;
-min-height:100%;
-}
-
-.vnst-rp-cover{
-min-height:145px;
-padding:28px 18px 18px;
-text-align:center;
-border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
-background:
-radial-gradient(circle at 50% 25%,color-mix(in srgb,var(--accent) 32%,transparent),transparent 35%),
-linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.25));
-position:relative;
-}
-
-.vnst-rp-cover:before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(180deg,transparent,rgba(0,0,0,.42));
-pointer-events:none;
-}
-
-.vnst-rp-cover>*{
-position:relative;
-z-index:1;
-}
-
-.vnst-rp-cover i{
-display:block;
-font-style:normal;
-color:var(--accent);
-font-size:26px;
-margin-bottom:10px;
-}
-
-.vnst-rp-cover h2{
-margin:0!important;
-padding:0!important;
-border:0!important;
-background:none!important;
-color:#fff;
-font-size:25px;
-font-weight:500;
-line-height:1.2;
-letter-spacing:4px;
-text-transform:uppercase;
-}
-
-.vnst-rp-cover h2 b{
-color:var(--accent);
-font-weight:900;
-}
-
-.vnst-rp-cover p{
-max-width:420px;
-margin:10px auto 0;
-color:#efe1f0;
-font-size:12px;
-line-height:1.55;
-}
-
-.vnst-rp-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:0;
-padding:18px;
-}
-
-.vnst-rp-place{
-display:grid!important;
-grid-template-columns:58px 1fr;
-gap:13px;
-min-height:96px;
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,.065);
-color:inherit!important;
-text-decoration:none!important;
-}
-
-.vnst-rp-place:nth-child(odd){
-border-right:1px solid rgba(255,255,255,.065);
-}
-
-.vnst-rp-place:nth-last-child(-n+2){
-border-bottom:0;
-}
-
-.vnst-rp-place .vnst-forum-url{
-display:none!important;
-}
-
-.vnst-rp-place .vnst-forum-icon{
-width:58px;
-height:58px;
-border-radius:50%;
-display:grid!important;
-place-items:center;
-background:rgba(255,255,255,.035);
-border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
-box-shadow:0 0 18px color-mix(in srgb,var(--accent) 13%,transparent);
-overflow:hidden;
-}
-
-.vnst-rp-place .vnst-forum-icon span{
-width:28px;
-height:28px;
-display:block;
-background-size:contain;
-background-position:center;
-background-repeat:no-repeat;
-filter:drop-shadow(0 0 8px color-mix(in srgb,var(--accent) 55%,transparent));
-}
-
-.vnst-rp-place .vnst-forum-main{
-min-width:0;
-}
-
-.vnst-rp-place .vnst-forum-title-wrap{
-margin:0!important;
-padding:0!important;
-border:0!important;
-background:none!important;
-}
-
-.vnst-rp-place .vnst-forum-title{
-display:block;
-margin:0 0 5px;
-color:#fff!important;
-font-size:15px;
-font-weight:900;
-line-height:1.2;
-text-transform:uppercase;
-letter-spacing:1px;
-text-decoration:none!important;
-}
-
-.vnst-rp-place .vnst-forum-desc{
-display:block;
-font-style:normal;
-color:var(--vnst-muted);
-font-size:12px;
-line-height:1.35;
-}
-
-.vnst-rp-place .vnst-forum-last{
-display:flex!important;
-align-items:center;
-gap:7px;
-margin-top:7px;
-color:var(--accent);
-font-size:11px;
-font-weight:700;
-}
-
-.vnst-rp-place .vnst-last-avatar{
-width:18px;
-height:18px;
-border-radius:4px;
-flex:0 0 18px;
-overflow:hidden;
-display:block;
-background:linear-gradient(135deg,#ffd6eb,var(--accent));
-border:1px solid rgba(255,255,255,.35);
-}
-
-.vnst-rp-place .vnst-last-avatar img{
-width:100%!important;
-height:100%!important;
-object-fit:cover;
-display:block;
-border-radius:0!important;
-}
-
-.vnst-rp-place .vnst-last-infos{
-display:block;
-font-size:11px;
-line-height:1.35;
-color:var(--accent);
-}
-
-.vnst-rp-place .vnst-last-infos:before{
-content:"Dernier posteur : ";
-}
-
-.vnst-rp-place .vnst-last-infos a{
-display:none!important;
-}
-
-/* CLEAN */
-
-#vnst-index .hierarchy,
-#vnst-index h2,
-#vnst-index h3{
-border:0!important;
-background:none!important;
-}
-
-#vnst-index .forumtitle{
-line-height:1.2;
-}
-
-#vnst-index .lastpost-avatar img{
-max-width:none!important;
-}
-
-/* RESPONSIVE */
+.vnst-rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:18px}
+.vnst-rp-place{display:grid;grid-template-columns:58px 1fr;gap:13px;min-height:96px;padding:12px;border-bottom:1px solid rgba(255,255,255,.065);color:inherit!important;text-decoration:none!important}
+.vnst-rp-place:nth-child(odd){border-right:1px solid rgba(255,255,255,.065)}
+.vnst-rp-place:nth-last-child(-n+2){border-bottom:0}
+.vnst-rp-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.035);border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:0 0 18px color-mix(in srgb,var(--accent) 13%,transparent)}
+.vnst-rp-icon span{width:28px;height:28px;display:block;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 0 8px color-mix(in srgb,var(--accent) 55%,transparent))}
+.vnst-rp-main strong{display:block;margin:0 0 5px;color:#fff;font-size:15px;font-weight:900;line-height:1.2;text-transform:uppercase;letter-spacing:1px}
+.vnst-rp-main em{display:block;font-style:normal;color:var(--vnst-muted);font-size:12px;line-height:1.35}
+.vnst-last{display:flex;align-items:center;gap:7px;margin-top:7px;color:var(--accent);font-size:11px;font-weight:700}
+.vnst-last:before{content:"Dernier posteur : "}
+.vnst-last-avatar{width:18px;height:18px;border-radius:4px;flex:0 0 18px;overflow:hidden;display:block;background:linear-gradient(135deg,#ffd6eb,var(--accent));border:1px solid rgba(255,255,255,.35)}
+.vnst-last-avatar img{width:100%!important;height:100%!important;object-fit:cover;display:block;border-radius:0!important}
+.vnst-last-info{display:block;color:var(--accent);font-size:11px;line-height:1.35}
+.vnst-rp-empty{grid-column:1/-1;padding:18px;color:var(--vnst-muted);font-size:12px;text-align:center}
 
 @media(max-width:1050px){
-#vnst-index{
-grid-template-columns:1fr;
-}
-
-.vnst-mini-card,
-.vnst-rp-built-row{
-grid-column:1/-1;
-}
+.vnst-built{grid-template-columns:1fr}
+.vnst-mini,.vnst-rp{grid-column:1/-1}
 }
 
 @media(max-width:720px){
-.vnst-rp-grid{
-grid-template-columns:1fr;
-}
-
-.vnst-rp-place,
-.vnst-rp-place:nth-child(odd){
-border-right:0;
-}
-
-.vnst-rp-place:nth-last-child(-n+2){
-border-bottom:1px solid rgba(255,255,255,.065);
-}
-
-.vnst-rp-place:last-child{
-border-bottom:0;
-}
-
-.vnst-rp-cover h2{
-font-size:20px;
-letter-spacing:2px;
-}
-
-.vnst-mini-card .vnst-forum-title{
-font-size:18px;
-}
+.vnst-rp-grid{grid-template-columns:1fr}
+.vnst-rp-place,.vnst-rp-place:nth-child(odd){border-right:0}
+.vnst-rp-place:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.065)}
+.vnst-rp-place:last-child{border-bottom:0}
+.vnst-rp-cover h2{font-size:20px;letter-spacing:2px}
 }
